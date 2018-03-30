@@ -53,7 +53,7 @@ def find_minimum_time_to_finish(input)
     print "Time to finish: #{total_time}\n"
 
     output = 'Case #' + "#{input["test_case"]}: #{total_time}\n"
-    open("./output_files/ihop.txt", "a") do |f|
+    open("./large_dataset.out", "a") do |f|
       f.puts output
     end
     return
@@ -98,7 +98,7 @@ def find_minimum_time_to_finish(input)
   end
 end
 
-File.open("./input_files/B-small-practice.in", "r") do |f|
+File.open("./B-large-practice.in", "r") do |f|
   f.each_with_index do |line, index|
     if index == 0
       next
