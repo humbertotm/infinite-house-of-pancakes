@@ -1,9 +1,7 @@
 def waiter(diners, pancakes_array, test_case)
-  print "in waiter\n"
   mins_array = []
 
   max = pancakes_array.max
-
   mins_array[0] = max
 
   i = 1
@@ -12,7 +10,7 @@ def waiter(diners, pancakes_array, test_case)
     split = 0
     pancakes_array.each do |pancake|
       if pancake > i
-        v = pancake.to_f / i # Float
+        v = pancake.to_f / i
         split = split + (v.ceil - 1)
       end
     end
@@ -24,24 +22,21 @@ def waiter(diners, pancakes_array, test_case)
     end
 
     i = i + 1
-
   end
 
   min = mins_array.min
 
   output = 'Case #' + "#{test_case}: #{min}\n"
   print "#{output}\n"
+
   open("./small_dataset.out", "a") do |f|
     f.puts output
   end
-
-  return
 end
 
 File.open("./B-small-practice.in", "r") do |f|
   f.each_with_index do |line, index|
     if index == 0
-      test_num = line.to_i
       next
     end
 
